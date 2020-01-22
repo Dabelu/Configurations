@@ -563,108 +563,36 @@
 // @section extruder
 
 /**
- * Prevent extrusion if the temperature is below EXTRUDE_MINTEMP.
- * Add M302 to set the minimum extrusion temperature and/or turn
- * cold extrusion prevention on and off.
- *
- * *** IT IS HIGHLY RECOMMENDED TO LEAVE THIS OPTION ENABLED! ***
- */
-#define PREVENT_COLD_EXTRUSION
-#define EXTRUDE_MINTEMP 170
-
-/**
- * Prevent a single extrusion longer than EXTRUDE_MAXLENGTH.
- * Note: For Bowden Extruders make this large enough to allow load/unload.
- */
-#define PREVENT_LENGTHY_EXTRUDE
-#define EXTRUDE_MAXLENGTH 200
-
-//===========================================================================
-//======================== Thermal Runaway Protection =======================
-//===========================================================================
-
-/**
- * Thermal Protection provides additional protection to your printer from damage
- * and fire. Marlin always includes safe min and max temperature ranges which
- * protect against a broken or disconnected thermistor wire.
- *
- * The issue: If a thermistor falls out, it will report the much lower
- * temperature of the air in the room, and the the firmware will keep
- * the heater on.
- *
- * If you get "Thermal Runaway" or "Heating failed" errors the
- * details can be tuned in Configuration_adv.h
- */
-
-#define THERMAL_PROTECTION_HOTENDS // Enable thermal protection for all extruders
-#define THERMAL_PROTECTION_BED     // Enable thermal protection for the heated bed
-#define THERMAL_PROTECTION_CHAMBER // Enable thermal protection for the heated chamber
-
-//===========================================================================
-//============================= Mechanical Settings =========================
-//===========================================================================
-
-// @section machine
-
-// Uncomment one of these options to enable CoreXY, CoreXZ, or CoreYZ kinematics
-// either in the usual order or reversed
-//#define COREXY
-//#define COREXZ
-//#define COREYZ
-//#define COREYX
-//#define COREZX
-//#define COREZY
-
-//===========================================================================
-//============================== Endstop Settings ===========================
-//===========================================================================
-
-// @section homing
-
-// Specify here all the endstop connectors that are connected to any endstop or probe.
-// Almost all printers will be using one per axis. Probes will use one or more of the
-// extra connectors. Leave undefined any used for non-endstop and non-probe purposes.
-#define USE_XMIN_PLUG
-//#define USE_YMIN_PLUG
-#define USE_ZMIN_PLUG
-//#define USE_XMAX_PLUG
-#define USE_YMAX_PLUG
-//#define USE_ZMAX_PLUG
-
-// Enable pullup for all endstops to prevent a floating state
-//#define ENDSTOPPULLUPS
-#if DISABLED(ENDSTOPPULLUPS)
-  // Disable ENDSTOPPULLUPS to set pullups individually
-  //#define ENDSTOPPULLUP_XMAX
-  //#define ENDSTOPPULLUP_YMAX
-  //#define ENDSTOPPULLUP_ZMAX
-  //#define ENDSTOPPULLUP_XMIN
-  //#define ENDSTOPPULLUP_YMIN
-  //#define ENDSTOPPULLUP_ZMIN
-  //#define ENDSTOPPULLUP_ZMIN_PROBE
-#endif
-
-// Enable pulldown for all endstops to prevent a floating state
-//#define ENDSTOPPULLDOWNS
-#if DISABLED(ENDSTOPPULLDOWNS)
-  // Disable ENDSTOPPULLDOWNS to set pulldowns individually
-  //#define ENDSTOPPULLDOWN_XMAX
-  //#define ENDSTOPPULLDOWN_YMAX
-  //#define ENDSTOPPULLDOWN_ZMAX
-  //#define ENDSTOPPULLDOWN_XMIN
-  //#define ENDSTOPPULLDOWN_YMIN
-  //#define ENDSTOPPULLDOWN_ZMIN
-  //#define ENDSTOPPULLDOWN_ZMIN_PROBE
-#endif
-
-// Mechanical endstop with COM to ground and NC to Signal uses "false" here (most common setup).
-#define X_MIN_ENDSTOP_INVERTING true  // Set to true to invert the logic of the endstop.
-#define Y_MIN_ENDSTOP_INVERTING true  // Set to true to invert the logic of the endstop.
-#define Z_MIN_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
-#define X_MAX_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
-#define Y_MAX_ENDSTOP_INVERTING true  // Set to true to invert the logic of the endstop.
-#define Z_MAX_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
-#define Z_MIN_PROBE_ENDSTOP_INVERTING false // Set to true to invert the logic of the probe.
+ * Prevent ğö• ğ9Ó ø•€°„€a‰À p© èÔ¡À"pş   øÕ€`Œ@'pÇ] ø;’BÔ‡ààl¾F°Fˆ È /À® ÅàØ  Î Ğ×€gp8 `8 `8 `8€7P8 `8tà¡  gœ±‰È úpÖàÇA  İÔÏÁpW† ´ÀpğpÂ@.pi°o	 ´Bµ†#`¹@°Cƒp àØ°ÅÙ æ3qàB¼qUÀ`{@`{@`fÀ`[À`~`»a€up3ÁpnXÙƒQÀœÀÇpÃcq C•àP°i°éWUbÀM  ‹ @¼@Xbk€Wb ²À C†f	q€±`^É2@lÀTb EH Û €ºÀ4pU	 İ€€‡R	 k )pY@ıfá@p\Z  \@`]@`Z@`` `_ À¼Ø ¼VÁMÀ^ä¤Ù€0 lQp[€`\@`]@`cÀ``@`V `[€`X@Lp¡°1Bxpx °¸Á`jÀ7pdÀ`$np–€zpÆÀ7pgA÷p§ÂOp‹S¾âJ¿ˆë`\ `  ¼€À/pn€*pÎ€pj
+ n€; n€·   Ähp6
+`©†Àqä .pä@HpÜÁp|UÔ| Õê `¿,À?à àECÏÀ¿@ğpÔpL…µp-Ì3q§ ©q} lp_™À£ ş ï¹  ·Cäp‘
+plAÜqôp‚ °¨À´p›@np<º E `î€pçÀ>p;À  •@]q8 na: `8Ä0f ·À°3ÁÉp@¬ à àÊ“àÕ - ¨€:ÀPƒa°<‚°Ô@4àÛ£ à¦ïà{X®±2€ àKDFàà‰à—}à@«p8C_€/Pª•ĞÎÀpH€W‡/ásÈ¥ÖŞ l€ÑãËÂâÌZâ…A"áZFqâuJà·à¶€$á2 àRq ğ9üšäÛ´Œâ-¯bä) í½{ã „çÌÔŒPàd« ğ‚²@éç,y ğ_Nâç ¤àíŞà£’ŠÒú àUJÜØÁàbÃ“àxàÿƒ3íz–‰å$  ğæ@ ğL ğZ ğ0) ğg„ ğœŸQf›ÉM”‹ÓFä˜Ìà=KëÊ€àN0ÙÆ ğa ğ¤×Æá@âIoã†Š°
+ØL  ğ6Ê ğ/¥§dUäö {çëx ğÒü“éáCAãbI‘ë
+p ğÁãÙ#àQŸœçí ğePÑæBÌíç, ”øÖ– ğÛq ğ¤Ôêå  ğ'n ğ©ğ'VŒåLÀ³æÚìßáÌ ğ·e=âƒ ğ’K¨ÚƒdàCEàƒÛàtÂ…àYáÌÀ*àÕÂ}àš„Kà®ÅxáÌ@FàÈ@à(AàwCàåà_‡àçÁŞáAÀ}àKÉFá¼B*à’Gá$á @é Àşã7í;à†KàûàÖhFà>Á¥(É¥€à€Ã•à‚àÍßáEå0³ÅàPCálÜåÖ1a“'AõÜJĞjÜÍàAuèIJ ğâxüĞ€<ã¤‡áäMàW‚µë™R ğïÃ$á÷ƒâ¤2ÚôVà¡…Aàå‚)ãˆD
+–ÂãáÍ‡mîKÈËà?æâÔ€îãÅ#;âá©èß À@à\pK%  àó“àÕsAOpÄ‡·CAnc€o€* 7àp×ÀNpOÂ,pq‚_pÎ€pu@`·€dpÿ1psˆàN°¼tB¢”ƒ àv à˜Š°>Œà_‚ °¿ à«”°;ÌA¢Æ à9 ¹ˆà€Â-p[€`W€`SÀ`X@`Ú–  [l  Z `WÀ`S@`XÀT*@ûf‚¤±i  Ä /p¿À8q‚Aß ¶ `zAß Àğà  à›F°f àM… °“À	°S‹qAŒÂ•§pƒp8 `8 `8 `8@‚p82‘ ßM‘  g‹—`¸C©øÀ&áÅ ·$€/]  h e  GŞp¾€¯ÀA!pˆ¢p*¢pˆ‚Jpˆ¢p* à ¦±¦MDa½ÁD°HÜÀÙXcîXŠŞ`¢$îe à ¦±¦MDa½ÁD°HÜ àôN ğZ ğnÈß-Å7¾$@˜pa,pGâ øÏÿøèøÍ Ip0 àÏÿøèøh ,pGâ øÏÿøèø$Lp¹ƒ ø- àÊ$ ğŞj øÊ$ ğŞj ø‰ àuëğİ‘ø® à  àv àqøQ¡ xõ`Q}V"øÜøv‚p‡ğÇ  à  àƒcø /øU€Ep à¡ àª°øùµsùµs­€øp¬ àvw	ğXìøùÜ]qN$ à±øw…y¥ àf¿øÚA$p‘@hpàuø  à!à”@°Ô¾ò¡Ú‡¶bâÉvb[””V€¢;ù²¶/„f]È¬k¤ãªòb_,äfXÖ6Œ²‹ä±„ ä!à”@°Ô¾ò¡Ú‡¶bâÉvb[””V€¢;ù²¶/„f]È¬k¤ãªòb_,äfXÖ6Œ²‹ä±„ ä?×ğ  ğïQø?×ğ  ğïQø[ø[ø?×ğ  ğïQø?×ğ  ğïQø…Ñ°Z àA°OÀƒp•+ à¹Çn€£7_q9O ğµ  9O ğµ  ª ğ³ˆ ğ ¤2ÉğDşp‹°x#ğE  ğ(@ğQ'øM€
+`*@`WI ğ‡ÿ
+ú*€
+`M  àWI ğ‡ÿ
+úWI ğ‡ÿ
+úê¥ ø4¢ øœHà³k ğ–º%£# '’  ğ³k ğ–º%£#€®pŠ à¬f	ğØ àV øD ğŒàåÀ°ù àÎğÍ$ àÎğÍ$ àV øV ølËğˆØ   ğlËğˆØ   ğ¡E ø¡E ø¬5k}'	q™jêPÀ	q/	q™êêP qvêêP€q\êêPÀqoêêP 	qqêêP@
+qœêêP@¦š?(°$q™êêP€¥š (°,D
+q™êêP€	q™êêP€	q™êêP€	qœêêPÀqœêêP€q™êêP€q' àpêêP€	qpêêPÀq¨êêP€	qtêêP@qoêêP 	qoêêP 	qëêêP@,qpêêP@	qpêêPÀqpêêP 	q$D	qoêêP@qpêêP@	q% àpêêP@)qpêêP€	qoêêPÀ	qoêêPÀ	qoêêP 
+qqêêP@
+qoêêP€	qpêêPÀq#„	q# àrêêP@	q\êêP Yq\êêPÀYqoêêPÀq$	qoêêPÀqoêêP qoêêPÀqpêêP@q0 àpêêPÀqmêêP@	q¬Ä/qpêêP€
+qpêêP€	q' à×êêPÀ	qpêêPÀqpêêP@	qmê
+êPÀ	qpêêPÀ	q‘êêP@qpêêP€q‘êêP@qpêêPÀ	qêêP 	qpêêP€
+qpêêP 
+q.ÄqpjêPÀ	qpêêP@	qpªêPÀ	q/Ä	qpªêP@	qpªêPÀ	qpªêPÀ	qpjêPÀ	qpjêPÀ	qpjêPÀ	qpêêP@	qpêêP@	qpjêP€qpêêP€	qjêPÀqjêP@qp*êP AqpêêPÀ	qSêêPÀq? àpêêP@q? àpêêP 	q& àpêêPÀqpêêP€qpêêP€qpêêP qpêêP qpêêP qpêêP 	qrê	êP 	qpêêP@qrêêPÀqrêêP@	qpêêP 
+qrêêPÀqpêêPÀ	qpêêP@	qrêêPÀqrêêP@	qpêêP€qpêêP@	qpêêP@	qpêêP€qpêêPÀ
+qrêêPÀ
+qrêêPÀ
+qpêêP 	q‹êêPÀqpêêP€	qpêêP 
+qpêêP 
+q' àqêêPÀ	qqêêP@	qˆêêP 	qrêêP@	qpêêPÀqpêêP€qŒêêP€qpêêP€qpêêPÀqpêêP€	qpêêP@	qpêêP@	q% àpjêP€cqujêP€cqoêêPÀqpêêP€	qpêêP€	qoêêP q™êêP€	q™êêP@¦š?(°pêêP œš?(°' à¸ øe àœ¯ğ„TÕ.Øø"N øÎğÍ$ à¡E øŠ à¼ øN ø©vğ„TÕ_‘ø%L~qğ<Ø   ğ½ğ ğ•Àøğ<Ø   ğ½ğ ğ•ÀøÎğÍ$ àÎğÍ$ à¡E ø¡E øÏ øÊÚ²/ç l‡Á#Â`•H¸×k.	
+ †¾qªÀ°6o ğŸ
+°Æ.qm à‰¹°ÿEçpÖÄà9áÁLà| àSfàF³€«
+€¸$ 
+‘YØàS àš°ÑÂ×Á²°Û…‰áæA¯¹Í o³ë2[b4Ôì_°€[¹¶Â`¬ ¼Ø€•¡¤²L&cI Ä@°Å °Ø"‡áà¡˜@°a àøT¨ÀõaÔBZ]eJ ?Qpô@jµU	îˆğÔ  œà±€)ÀBƒşäJ€¡€“ ‡Ä}ptIp¿ ààÂTÁ¢Á8À¥àf³ØO‘€¢Ç àêÂ[Àô LpAœà–M§bGÀuBÑØÔ€ ®Û ©à		ƒ¾Ô	Ô»4^â°Í^`,PáÁpôè¬Ğ Z_MIN_PROBE_ENDSTOP_INVERTING false // Set to true to invert the logic of the probe.
 
 /**
  * Stepper Drivers
